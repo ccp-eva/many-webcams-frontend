@@ -16,11 +16,18 @@
    3. `/var/www/html/manywebcams/`
 4. Copy your local `manywebcams` directory to your web server.
 
-### Notes
+## Notes
 
-**Fix scrubbing issue** (affects all browsers)
+### URL Parameter
 
-For recording in the browser (using MediaRecorder API) there is a scrubbing bug for the video files. That means the videos files are not seekable/scrubbable (see here: https://bugs.chromium.org/p/chromium/issues/detail?id=569840). Re-encoding the files fixes this issue. Use handbrake (macOS) or any encoder of your choice; `ffmpeg`
+You can modify the outcoming filename by defining an `id` URL parameter. That value is being used as a prefix in the outcoming filenames. For example, if your manywebcams URL is: `https://example.com/manywebcams` you can set the parameter as such: `https://example.com/manywebcams?id=mycustomcode123456`. The outcoming files are now prepended with `mycustomcode123456_`. Note that `id` **is case sensitive**, that means `ID` will not work nor other parameters (`code`, `uid`, etc.).
 
-Broken webm to working mp4 using ffmpeg:
-`ffmpeg -i yourbrokenvideo.webm -crf 24 -c:v libx264 working.mp4`
+### Fix scrubbing issue (affects all browsers)
+
+For recording in the browser (using MediaRecorder API) there is a scrubbing bug for the video files. That means the videos files are not seekable/scrubbable (see here: https://bugs.chromium.org/p/chromium/issues/detail?id=569840). Re-encoding the files fixes this issue. Use handbrake (macOS) or any encoder of your choice.
+
+#### Broken webm to working mp4 using `ffmpeg`:
+
+```
+ffmpeg -i yourbrokenvideo.webm -crf 24 -c:v libx264 working.mp4
+```
