@@ -5,7 +5,7 @@ function sanitize($content){
     return preg_replace('/[^\dA-Za-z_]/i', '', $no_newlines);
 }
 
-$rootpath = '/srv/ccp-odc/manywebcams/data/';
+$rootpath = './data/';
 
 $post_data = json_decode(file_get_contents('php://input'), true);
 $sanitized_filename = sanitize($post_data['filename']);
