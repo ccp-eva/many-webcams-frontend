@@ -2,6 +2,13 @@
 
 > A docker-less version of https://github.com/adriansteffan/mb2-webcam-eyetracking.
 
+---
+
+**UPDATE January 11, 2021**  
+There is no configuration required anymore.
+
+---
+
 ## Requirements
 
 - You need a web server (ask your IT staff)
@@ -10,11 +17,7 @@
 
 1. Download this repo as zip or [click here](https://github.com/ccp-eva/many-webcams-frontend/archive/refs/heads/main.zip)
 2. Extract the zip file
-3. Open the file `manywebcams/write_data.php` and change line 8 to point to the `data` folder on server `$rootpath = '/serverpath/to/your/manywebcams/data/';`. Usual server paths are:
-   1. `/srv/manywebcams/`
-   2. `/srv/www/manywebcams/`
-   3. `/var/www/html/manywebcams/`
-4. Copy your local `manywebcams` directory to your web server.
+3. Copy your local `manywebcams` directory to your web server.
 
 ## Notes
 
