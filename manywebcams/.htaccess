@@ -1,0 +1,4 @@
+<FilesMatch ".(htaccess|webm|json)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
